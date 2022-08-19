@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/VVDNApplicationWPF/v16
+/VVDNApplicationWPF/bin/Debug
+/VVDNApplicationWPF/obj/Debug
