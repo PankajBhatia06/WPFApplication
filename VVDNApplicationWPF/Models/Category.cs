@@ -16,11 +16,11 @@ namespace VVDNApplicationWPF.Models
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public Category()
-        {
-            Id = 12345;
-            Name = "Test Name";
-        }
+        //public Category()
+        //{
+        //    Id = 12345;
+        //    Name = "Test Name";
+        //}
 
 
         private int _Id;
