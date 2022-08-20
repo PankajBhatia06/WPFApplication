@@ -7,5 +7,26 @@
         xmlns:views="clr-namespace:VVDNApplicationWPF.Views"
         mc:Ignorable="d"
         Title="VVDN WPF Application" Height="450" Width="800">
-    <views:CategoryView></views:CategoryView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Sample Page" Name="MenuSample" Click="MenuSample_Click"></MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="Masters">
+                <MenuItem Header="Categories" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="UOM" Name="MenuUOM" Click="MenuUOM_Click"></MenuItem>
+                <MenuItem Header="Brands" Name="MenuBrands" Click="MenuBrands_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Frame x:Name="FramePages"  Grid.Row="1"></Frame>
+
+    </Grid>
 </Window>

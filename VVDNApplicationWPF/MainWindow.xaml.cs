@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VVDNApplicationWPF.Views;
 
 namespace VVDNApplicationWPF
 {
@@ -23,6 +24,28 @@ namespace VVDNApplicationWPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            //CategoryView categoryView = new CategoryView();
+            //FramePages.Content = categoryView;
+            FramePages.Navigate(new Uri(@"\Views\CategoryView.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void MenuUOM_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuBrands_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuSample_Click(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\SampleView.xaml", UriKind.Relative));
         }
     }
 }
