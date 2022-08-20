@@ -36,7 +36,7 @@ namespace VVDNApplicationWPF.Views
             for (int i = 0; i < SliderOne.Maximum; i++)
             {
                 SliderOne.Value += i;
-                Thread.Sleep(1);
+                //Thread.Sleep(1);
             }
         }
     }
