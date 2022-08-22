@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,24 @@ using VVDNApplicationWPF.Models;
 
 namespace VVDNApplicationWPF.ViewModels
 {
-    public class SampleViewModel
+    public class SampleViewModel : INotifyPropertyChanged
     {
+
+        private bool _ListViewVisibility;
+
+        public bool ListViewVisibility
+        {
+
+            get
+            {
+                return _ListViewVisibility;
+            }
+            set
+            {
+                _ListViewVisibility = value;
+                NotifyPropertyChanged();
+            }
+        }
         public List<string> ListOfString { get; set; }
 
         public List<DataGridModel> DataGridModels { get; set; }
@@ -18,6 +35,7 @@ namespace VVDNApplicationWPF.ViewModels
 
         public SampleViewModel()
         {
+            ListViewVisibility = true;
             CheckBoxSample = true;
             ListOfString = new List<string>
             {
@@ -55,7 +73,15 @@ namespace VVDNApplicationWPF.ViewModels
                 Name = "Shagun",
                 IsAvailable = true
             });
+           
 
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

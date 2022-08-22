@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VVDNApplicationWPF.Models
 {
-    public class Category : INotifyPropertyChanged
+    public class Category : INotifyPropertyChanged, IDataErrorInfo
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -34,7 +34,7 @@ namespace VVDNApplicationWPF.Models
             set
             {
                 _Id = value;
-                NotifyPropertyChanged();
+                //NotifyPropertyChanged();
             }
         }
 
@@ -52,7 +52,31 @@ namespace VVDNApplicationWPF.Models
                 NotifyPropertyChanged();
             }
         }
-   
-      
+
+        public string Error => throw new NotImplementedException();
+
+        public string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case "Name":
+                        if (string.IsNullOrWhiteSpace(Name))
+                        {
+                            return "Enter a value";
+                        }
+                        else if (!string.IsNullOrWhiteSpace(Name) && Name.Equals("Test"))
+                        {
+                            return "This name is not allowed";
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                return "";
+            }
+
+        }
     }
 }
