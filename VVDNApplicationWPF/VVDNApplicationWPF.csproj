@@ -57,14 +57,24 @@
     </ApplicationDefinition>
     <Compile Include="Converters\BooleanToYesNoConverter.cs" />
     <Compile Include="Converters\VisibilityValueConverter.cs" />
+    <Compile Include="Models\Brands.cs" />
     <Compile Include="Models\DataGridModel.cs" />
+    <Compile Include="Models\UOM.cs" />
+    <Compile Include="ViewModels\BrandViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\SampleViewModel.cs" />
+    <Compile Include="ViewModels\UOMViewModel.cs" />
+    <Compile Include="Views\BrandsView.xaml.cs">
+      <DependentUpon>BrandsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CategoryView.xaml.cs">
       <DependentUpon>CategoryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SampleView.xaml.cs">
       <DependentUpon>SampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UOMView.xaml.cs">
+      <DependentUpon>UOMView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -78,11 +88,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\BrandsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CategoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UOMView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
