@@ -35,9 +35,14 @@ namespace VVDNApplicationWPF.Views
         {
             for (int i = 0; i < SliderOne.Maximum; i++)
             {
-                SliderOne.Value += i;
-                Thread.Sleep(1);
+                //SliderOne.Value += i;
+                //Thread.Sleep(1);
             }
+        }
+
+        private void btnVisibility_Click(object sender, RoutedEventArgs e)
+        {
+            sampleViewModel.ListViewVisibility = !sampleViewModel.ListViewVisibility;
         }
     }
 }
