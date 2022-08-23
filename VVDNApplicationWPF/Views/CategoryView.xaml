@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Category Id"/>
-        <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding SelectedCategory.Id,Mode=TwoWay}"
+        <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding SelectedCategory.Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  ToolTip="Please enter a number value less than 1000000">
         </TextBox>
 
@@ -31,6 +31,24 @@
         <TextBox x:Name="TxtName" Grid.Row="1" Grid.Column="1" Margin="5" 
                  Text="{Binding SelectedCategory.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
             ValidatesOnDataErrors=True, NotifyOnValidationError=True, ValidatesOnExceptions=True}">
+
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding SelectedCategory.Name}" Value="Test"/>
+                                <Condition Binding="{Binding SelectedCategory.Id}" Value="12345"/>
+                            </MultiDataTrigger.Conditions>
+                            <MultiDataTrigger.Setters>
+                                <Setter Property="Background" Value="Brown"/>
+                            </MultiDataTrigger.Setters>
+                        </MultiDataTrigger>
+                        
+                        
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
 
         </TextBox>
 
