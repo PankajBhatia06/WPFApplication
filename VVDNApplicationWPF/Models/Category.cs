@@ -34,7 +34,7 @@ namespace VVDNApplicationWPF.Models
             set
             {
                 _Id = value;
-                //NotifyPropertyChanged();
+                NotifyPropertyChanged();
             }
         }
 
