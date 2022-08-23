@@ -15,7 +15,7 @@ namespace VVDNApplicationWPF.Converters
             if ((bool)value == true)
                 return "Yes";
 
-            return "No";
+            return "No";//gfdresdtrfghjgftrdfg
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
