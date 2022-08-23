@@ -53,7 +53,7 @@ namespace VVDNApplicationWPF.Models
             }
         }
 
-        public string Error => throw new NotImplementedException();
+        public string Error => throw new NotImplementedException();//short syntax to declare method
 
         public string this[string columnName]
         {
