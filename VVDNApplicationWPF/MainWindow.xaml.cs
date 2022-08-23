@@ -45,7 +45,12 @@ namespace VVDNApplicationWPF
 
         private void MenuSample_Click(object sender, RoutedEventArgs e)
         {
-            FramePages.Navigate(new Uri(@"\Views\SampleView.xaml", UriKind.Relative));
+            FramePages.Navigate(new Uri(@"\Views\SampleView.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void MenuProduct_Click(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\ProductView.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

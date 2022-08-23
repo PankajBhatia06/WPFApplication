@@ -11,7 +11,7 @@ namespace VVDNApplicationWPF.Models
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyPropertyChanged(String propertyName = "")
+        public void NotifyPropertyChanged(String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -55,13 +55,13 @@ namespace VVDNApplicationWPF.Models
 
         public string Error => throw new NotImplementedException();
 
-        public string this[string columnName]
+        public string this[string columnName] //fixed syntax
         {
             get
             {
                 switch (columnName)
                 {
-                    case "Name":
+                    case nameof(Name):
                         if (string.IsNullOrWhiteSpace(Name))
                         {
                             return "Enter a value";
@@ -69,6 +69,12 @@ namespace VVDNApplicationWPF.Models
                         else if (!string.IsNullOrWhiteSpace(Name) && Name.Equals("Test"))
                         {
                             return "This name is not allowed";
+                        }
+                        break;
+                    case nameof(Id):
+                        if (!Id.Equals(1))
+                        {
+                            return "Enter a value";
                         }
                         break;
                     default:

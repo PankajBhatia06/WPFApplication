@@ -13,7 +13,7 @@ namespace VVDNApplicationWPF.ViewModels
 
         public CategoryViewModel()
         {
-            SelectedCategory = new Category();
+            SelectedCategory = new Category(); // creating instance so that it don't initialize blank
         }
     }
 }
