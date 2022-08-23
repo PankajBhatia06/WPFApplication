@@ -16,11 +16,10 @@ namespace VVDNApplicationWPF.Models
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        //public Category()
-        //{
-        //    Id = 12345;
-        //    Name = "Test Name";
-        //}
+        public Brands()
+        {
+           
+        }
 
 
         private int _Id;
@@ -34,7 +33,7 @@ namespace VVDNApplicationWPF.Models
             set
             {
                 _Id = value;
-                //NotifyPropertyChanged();
+                NotifyPropertyChanged(nameof(Id));
             }
         }
 
@@ -55,13 +54,13 @@ namespace VVDNApplicationWPF.Models
 
         public string Error => throw new NotImplementedException();
 
-        public string this[string columnName]
+        public string this[string columnName]//interface method...can use id tooo
         {
             get
             {
                 switch (columnName)
                 {
-                    case "Name":
+                    case nameof(Name):
                         if (string.IsNullOrWhiteSpace(Name))
                         {
                             return "Enter a value";
@@ -70,6 +69,14 @@ namespace VVDNApplicationWPF.Models
                         {
                             return "This name is not allowed";
                         }
+                        break;
+
+                    case nameof(Id):
+                        if (Id<=0)
+                        {
+                            return "Value should be greater than zero !!";
+                        }
+                      
                         break;
                     default:
                         break;

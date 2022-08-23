@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VVDNApplicationWPF.ViewModels;
 
 namespace VVDNApplicationWPF.Views
 {
@@ -20,14 +21,19 @@ namespace VVDNApplicationWPF.Views
     /// </summary>
     public partial class UOMView : Page
     {
+        public UOMViewModel uomViewModel { get; set; }
         public UOMView()
         {
             InitializeComponent();
+            uomViewModel = new UOMViewModel();
+            this.DataContext = uomViewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show($"ID:{uomViewModel.SelectedUOM.Id} and Name: {uomViewModel.SelectedUOM.Name}", "MY WPF Application", MessageBoxButton.OK);
+            uomViewModel.SelectedUOM.Id = int.MaxValue;
+            uomViewModel.SelectedUOM.Name = "Again my name";
         }
     }
 }
