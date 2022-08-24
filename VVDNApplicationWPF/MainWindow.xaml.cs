@@ -28,18 +28,22 @@ namespace VVDNApplicationWPF
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //CategoryView categoryView = new CategoryView();
-            //FramePages.Content = categoryView;
+            CategoryView categoryView = new CategoryView();
+            FramePages.Content = categoryView;
             FramePages.Navigate(new Uri(@"\Views\CategoryView.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void MenuUOM_Click(object sender, RoutedEventArgs e)
         {
-
+            UOMView uOMView = new UOMView(); 
+            FramePages.Content = uOMView;   
+             
         }
 
         private void MenuBrands_Click(object sender, RoutedEventArgs e)
         {
+            BrandsView brandsView = new BrandsView();   
+            FramePages.Content = brandsView;
 
         }
 
