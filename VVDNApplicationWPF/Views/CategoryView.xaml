@@ -23,15 +23,15 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Category Id"/>
-        <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding SelectedCategory.Id,Mode=TwoWay}"
-                 ToolTip="Please enter a number value less than 1000000">
+        <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding SelectedCategory.Id,
+            Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}">
+            <!--"Please enter a number value less than 1000000">-->
         </TextBox>
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Category Name"/>
         <TextBox x:Name="TxtName" Grid.Row="1" Grid.Column="1" Margin="5" 
                  Text="{Binding SelectedCategory.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
-            ValidatesOnDataErrors=True, NotifyOnValidationError=True, ValidatesOnExceptions=True}">
-
+            ValidatesOnDataErrors=True}">
         </TextBox>
 
         <Button Grid.Row="2" Grid.Column="1" Margin="5" Click="Button_Click">Save</Button>

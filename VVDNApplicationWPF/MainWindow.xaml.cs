@@ -35,12 +35,12 @@ namespace VVDNApplicationWPF
 
         private void MenuUOM_Click(object sender, RoutedEventArgs e)
         {
-
+            FramePages.Navigate(new Uri(@"\Views\UOMView.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void MenuBrands_Click(object sender, RoutedEventArgs e)
         {
-
+            FramePages.Navigate(new Uri(@"\Views\BrandView.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void MenuSample_Click(object sender, RoutedEventArgs e)

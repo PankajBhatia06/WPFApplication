@@ -24,7 +24,7 @@ namespace VVDNApplicationWPF.ViewModels
             set
             {
                 _ListViewVisibility = value;
-                NotifyPropertyChanged();
+                NotifyPropertyChanged("ListViewVisibility");
             }
         }
         public List<string> ListOfString { get; set; }
@@ -79,7 +79,7 @@ namespace VVDNApplicationWPF.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyPropertyChanged(String propertyName = "")
+        private void NotifyPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

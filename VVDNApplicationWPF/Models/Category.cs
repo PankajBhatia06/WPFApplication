@@ -11,16 +11,11 @@ namespace VVDNApplicationWPF.Models
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyPropertyChanged(String propertyName = "")
+        private void NotifyPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public Category()
-        {
-            Id = 12345;
-            Name = "Test Name";
-        }
 
 
         private int _Id;
@@ -34,11 +29,13 @@ namespace VVDNApplicationWPF.Models
             set
             {
                 _Id = value;
-                //NotifyPropertyChanged();
+                NotifyPropertyChanged("Id");
             }
         }
 
         private string _Name;
+
+       
 
         public string Name
         {
@@ -49,11 +46,12 @@ namespace VVDNApplicationWPF.Models
             set
             {
                 _Name = value;
-                NotifyPropertyChanged();
+                NotifyPropertyChanged("Name");
             }
         }
 
         public string Error => throw new NotImplementedException();
+
 
         public string this[string columnName]
         {
@@ -69,6 +67,12 @@ namespace VVDNApplicationWPF.Models
                         else if (!string.IsNullOrWhiteSpace(Name) && Name.Equals("Test"))
                         {
                             return "This name is not allowed";
+                        }
+                        break;
+                    case "Id":
+                        if (Id.Equals(0))
+                        {
+                            return "Enter a value";
                         }
                         break;
                     default:
