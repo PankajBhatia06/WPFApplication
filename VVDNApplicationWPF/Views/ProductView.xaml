@@ -1,0 +1,68 @@
+﻿<Page x:Class="VVDNApplicationWPF.Views.ProductView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VVDNApplicationWPF.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductView">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Product Name"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SelectedProduct.Name}"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Categories"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Categories}" 
+                  DisplayMemberPath="Name" SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedProduct.SelectedCategory}"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Brands"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Brands}" 
+                  DisplayMemberPath="Name" SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedProduct.SelectedBrand}"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Uoms"/>
+        <ComboBox x:Name="DropUom" Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Uoms}" 
+                  DisplayMemberPath="Name" SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedProduct.SelectedUom}" SelectionChanged="ComboBox_SelectionChanged"/>
+
+        <TextBlock x:Name="LblOtherBrand" Grid.Row="4" Grid.Column="0" Text="Enter Brand Name">
+            <!--<TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SelectedProduct.SelectedUom}" Value="-1">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>-->
+        </TextBlock>
+        <TextBox x:Name="TxtOtherBrand" Grid.Row="4" Grid.Column="1" Text="{Binding SelectedProduct.OtherBrand}">
+            <!--<TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SelectedProduct.SelectedUom}" Value="-1">
+                            <Setter Property="Visibility" Value="Visible"/>
+
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>-->
+        </TextBox>
+    </Grid>
+</Page>

@@ -30,7 +30,6 @@ namespace VVDNApplicationWPF
         {
             //CategoryView categoryView = new CategoryView();
             //FramePages.Content = categoryView;
-            FramePages.Navigate(new Uri(@"\Views\CategoryView.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void MenuUOM_Click(object sender, RoutedEventArgs e)
@@ -46,6 +45,22 @@ namespace VVDNApplicationWPF
         private void MenuSample_Click(object sender, RoutedEventArgs e)
         {
             FramePages.Navigate(new Uri(@"\Views\SampleView.xaml", UriKind.Relative));
+        }
+
+        private void MenuProducts_Click(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\ProductView.xaml", UriKind.Relative));
+        }
+
+        private void ListCategories_Click(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\CategoryListingView.xaml", UriKind.RelativeOrAbsolute));
+
+        }
+
+        private void AddCategory_Click(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\CategoryView.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

@@ -20,9 +20,13 @@
             </MenuItem>
 
             <MenuItem Header="Masters">
-                <MenuItem Header="Categories" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Categories" Click="MenuItem_Click">
+                    <MenuItem x:Name="ListCategories" Header="List Categories" Click="ListCategories_Click"></MenuItem>
+                    <MenuItem x:Name="AddCategory" Click="AddCategory_Click" Header="Add New Category" ></MenuItem>
+                </MenuItem>
                 <MenuItem Header="UOM" Name="MenuUOM" Click="MenuUOM_Click"></MenuItem>
                 <MenuItem Header="Brands" Name="MenuBrands" Click="MenuBrands_Click"></MenuItem>
+                <MenuItem Header="Products" Name="MenuProducts" Click="MenuProducts_Click"></MenuItem>
             </MenuItem>
         </Menu>
 

@@ -101,12 +101,24 @@
     <Compile Include="Converters\BooleanToYesNoConverter.cs" />
     <Compile Include="Converters\VisibilityValueConverter.cs" />
     <Compile Include="Database\Connection.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\DataGridModel.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\UOM.cs" />
     <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="ViewModels\CategoriesListViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\SampleViewModel.cs" />
     <Compile Include="Views\CategoryView.xaml.cs">
       <DependentUpon>CategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryListingView.xaml.cs">
+      <DependentUpon>CategoryListingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SampleView.xaml.cs">
       <DependentUpon>SampleView.xaml</DependentUpon>
@@ -124,6 +136,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\CategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CategoryListingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
