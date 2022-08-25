@@ -23,12 +23,38 @@ namespace VVDNApplicationWPF.Services
                 mySqlCommand.Parameters.AddWithValue("user_id", 1);
                 mySqlCommand.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
 
             return true;
         }
+
+        public List<Category> GetAllCategories()
+        {
+            var listCategories = new List<Category>();
+
+            MySqlCommand getCategoriesCommand = new MySqlCommand();
+            getCategoriesCommand.Connection = Connection.CreateSqlConnection();
+            getCategoriesCommand.CommandText = "Select ID, Category_Name from categories";
+            getCategoriesCommand.CommandType = System.Data.CommandType.Text;
+            var reader = getCategoriesCommand.ExecuteReader();
+            if (reader.HasRows == true)
+            {
+                while (reader.Read())
+                {
+                    listCategories.Add(new Category
+                    {
+                        Id = reader.GetInt32("ID"),
+                        Name = reader.GetString("Category_Name")
+                    });
+                }
+                reader.Close();
+            }
+
+            return listCategories;
+        }
     }
+
 }

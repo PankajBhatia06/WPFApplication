@@ -10,11 +10,16 @@ namespace VVDNApplicationWPF.Database
 {
     public static class Connection
     {
+        static MySqlConnection connection;
         public static MySqlConnection CreateSqlConnection()
         {
-            string connectionString= ConfigurationManager.ConnectionStrings["VVDNConnectionString"].ConnectionString;
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();
+            string connectionString = ConfigurationManager.ConnectionStrings["VVDNConnectionString"].ConnectionString;
+            if (connection == null)
+                connection = new MySqlConnection(connectionString);
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+                connection.Open();
+
             return connection;
         }
     }

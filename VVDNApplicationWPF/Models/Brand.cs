@@ -7,15 +7,8 @@ using System.Threading.Tasks;
 
 namespace VVDNApplicationWPF.Models
 {
-    public class Category : BaseModel, IDataErrorInfo
+    public class Brand : BaseModel, IDataErrorInfo
     {
-     
-        public Category()
-        {
-            Id = 12345;
-            Name = "Test Name";
-        }
-
 
         private int _Id;
         public int Id
