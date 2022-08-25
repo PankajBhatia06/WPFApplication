@@ -35,7 +35,7 @@ namespace VVDNApplicationWPF
 
         private void MenuUOM_Click(object sender, RoutedEventArgs e)
         {
-
+            FramePages.Navigate(new Uri(@"\Views\UOM.xaml", UriKind.Relative));
         }
 
         private void MenuBrands_Click(object sender, RoutedEventArgs e)
@@ -46,6 +46,11 @@ namespace VVDNApplicationWPF
         private void MenuSample_Click(object sender, RoutedEventArgs e)
         {
             FramePages.Navigate(new Uri(@"\Views\SampleView.xaml", UriKind.Relative));
+        }
+
+        private void ProductMenu_Click(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\Product.xaml", UriKind.Relative));
         }
     }
 }

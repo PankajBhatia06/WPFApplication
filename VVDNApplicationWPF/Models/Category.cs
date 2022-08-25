@@ -34,7 +34,7 @@ namespace VVDNApplicationWPF.Models
             set
             {
                 _Id = value;
-                //NotifyPropertyChanged();
+                NotifyPropertyChanged();
             }
         }
 
@@ -70,6 +70,10 @@ namespace VVDNApplicationWPF.Models
                         {
                             return "This name is not allowed";
                         }
+                        break;
+                    case "Id":
+                        if (Id <= 0)
+                            return "Id greater than 0";
                         break;
                     default:
                         break;

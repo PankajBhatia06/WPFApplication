@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VVDNApplicationWPF.ViewModels;
+using VVDNApplicationWPF.Database;
 
 namespace VVDNApplicationWPF.Views
 {
@@ -27,6 +28,7 @@ namespace VVDNApplicationWPF.Views
             InitializeComponent();
             categoryViewModel = new CategoryViewModel();
             this.DataContext = categoryViewModel;
+           var connection =  Connection.CreateSqlConnection();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

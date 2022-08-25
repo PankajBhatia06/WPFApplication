@@ -23,10 +23,11 @@
                 <MenuItem Header="Categories" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Header="UOM" Name="MenuUOM" Click="MenuUOM_Click"></MenuItem>
                 <MenuItem Header="Brands" Name="MenuBrands" Click="MenuBrands_Click"></MenuItem>
+                <MenuItem Header="Product" Name="ProductMenu" Click="ProductMenu_Click"></MenuItem>
             </MenuItem>
         </Menu>
 
-        <Frame x:Name="FramePages"  Grid.Row="1"></Frame>
+        <Frame  x:Name="FramePages"  Grid.Row="1"></Frame>
 
     </Grid>
 </Window>

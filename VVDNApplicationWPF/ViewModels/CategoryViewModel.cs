@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VVDNApplicationWPF.Models;
+using VVDNApplicationWPF.Database;
 
 namespace VVDNApplicationWPF.ViewModels
 {
@@ -14,6 +15,9 @@ namespace VVDNApplicationWPF.ViewModels
         public CategoryViewModel()
         {
             SelectedCategory = new Category();
+           
+            
+            
         }
     }
 }
