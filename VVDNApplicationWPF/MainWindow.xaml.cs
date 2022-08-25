@@ -35,17 +35,25 @@ namespace VVDNApplicationWPF
 
         private void MenuUOM_Click(object sender, RoutedEventArgs e)
         {
-
+           FramePages.Navigate(new Uri(@"\Views\UOMView.xaml", UriKind.RelativeOrAbsolute));
+           //UOMView uOMView = new UOMView();
+            ///FramePages.Content= uomview;
         }
 
         private void MenuBrands_Click(object sender, RoutedEventArgs e)
         {
-
+            FramePages.Navigate(new Uri(@"\Views\BrandswithView.xaml", UriKind.Relative));
         }
 
         private void MenuSample_Click(object sender, RoutedEventArgs e)
         {
             FramePages.Navigate(new Uri(@"\Views\SampleView.xaml", UriKind.Relative));
         }
+
+        private void Products_Click(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\ProductView.xaml", UriKind.RelativeOrAbsolute));
+        }
+    
     }
 }

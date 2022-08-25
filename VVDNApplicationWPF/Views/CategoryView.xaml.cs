@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VVDNApplicationWPF.DataBase;
 using VVDNApplicationWPF.ViewModels;
 
 namespace VVDNApplicationWPF.Views
@@ -27,12 +28,14 @@ namespace VVDNApplicationWPF.Views
             InitializeComponent();
             categoryViewModel = new CategoryViewModel();
             this.DataContext = categoryViewModel;
+            // var Connection = new CreateSqlConnectionstring()
+            Connection.CreateSqlConnection();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"ID:{categoryViewModel.SelectedCategory.Id} and Name: {categoryViewModel.SelectedCategory.Name}", "MY WPF Application", MessageBoxButton.OK);
-            categoryViewModel.SelectedCategory.Id = int.MaxValue;
+            MessageBox.Show($"ID:{categoryViewModel.SelectedCategory.ID} and Name: {categoryViewModel.SelectedCategory.Name}", "MY WPF Application", MessageBoxButton.OK);
+            categoryViewModel.SelectedCategory.ID = int.MaxValue;
             categoryViewModel.SelectedCategory.Name = "Again my name";
         }
     }
