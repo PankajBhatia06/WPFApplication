@@ -28,7 +28,7 @@
         </TextBox>
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Category Name"/>
-        <TextBox x:Name="TxtName" Grid.Row="1" Grid.Column="1" Margin="5" 
+        <TextBox Name="TxtName" Grid.Row="1" Grid.Column="1" Margin="5" 
                  Text="{Binding SelectedCategory.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
             ValidatesOnDataErrors=True, NotifyOnValidationError=True, ValidatesOnExceptions=True}">
 

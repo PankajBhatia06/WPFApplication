@@ -22,18 +22,17 @@ namespace VVDNApplicationWPF.Views
     /// </summary>
     public partial class CategoryView : Page
     {
-        public CategoryViewModel categoryViewModel { get; set; }
+        public CategoryViewModel ObjCategoryViewModel { get; set; }
         public CategoryView()
         {
             InitializeComponent();
-            categoryViewModel = new CategoryViewModel();
-            this.DataContext = categoryViewModel;
-            var connection = Connection.CreateSqlConnection();
+            ObjCategoryViewModel = new CategoryViewModel();
+            this.DataContext = ObjCategoryViewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (categoryViewModel.SaveCategory())
+            if (ObjCategoryViewModel.SaveCategory())
             {
                 MessageBox.Show("Category created !!");
             }
