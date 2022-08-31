@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VVDNApplicationWPF.ViewModels;
+using VVDNApplicationWPF.DataBase;
 
 namespace VVDNApplicationWPF.Views
 {
@@ -31,14 +32,23 @@ namespace VVDNApplicationWPF.Views
             InitializeComponent();
             uomViewModel = new UOMViewModel();
             this.DataContext = uomViewModel;
+            var connection = Connection.CreateSqlConnection();
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"ID:{uomViewModel.SelectedUOM.ID} and Name : {uomViewModel.SelectedUOM.Name}", "My UOM Application", MessageBoxButton.OK);
-            uomViewModel.SelectedUOM.ID= int.MaxValue;
-            uomViewModel.SelectedUOM.Name = " Again my Name";
+            //MessageBox.Show($"ID:{uomViewModel.SelectedUOM.ID} and Name : {uomViewModel.SelectedUOM.Name}", "My UOM Application", MessageBoxButton.OK);
+            //uomViewModel.SelectedUOM.ID= int.MaxValue;
+            //uomViewModel.SelectedUOM.Name = " Again my Name";
+            if (uomViewModel.SaveUOM())
+            {
+                MessageBox.Show("Uom created !!");
+            }
+            else
+            {
+                MessageBox.Show("Some error occurred !!");
+            }
         }
 
     }

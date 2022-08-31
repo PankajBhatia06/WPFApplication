@@ -33,8 +33,39 @@ namespace VVDNApplicationWPF.Models
                 NotifyPropertyChanged();
             }
         }
+        private string _SelectedCategory;
+        public string SelectedCategory
+        {
+            get { return _SelectedCategory; }
+            set
+            {
+                _SelectedCategory = value;
+                NotifyPropertyChanged();
+            }
+        }
+        private string _SelectedUOMs;
+        public string SelectedUOMs
+        {
+            get { return _SelectedUOMs; }
+            set
+            {
+                _SelectedUOMs = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private string _SelectedBrand;
+        public string SelectedBrand
+        {
+            get { return _SelectedBrand; }
+            set
+            {
+                _SelectedBrand = value;
+                NotifyPropertyChanged();
+            }
+        }
         private bool _IsAvailable;
-        public bool IsAvailablen {
+        public bool IsAvailable {
             get
             {
                 return _IsAvailable;
@@ -59,9 +90,21 @@ namespace VVDNApplicationWPF.Models
                 NotifyPropertyChanged();
             }
         }
-        public List<String> SelectedCategory { get; set; }
-        public List<string> SelectedBrand { get; set; }
-        public List<string> SelectedUOMs { get; set; }
+        private string _OtherBrand;
+        public string OtherBrand
+        {
+            get
+            {
+                return  _OtherBrand;
+            }
+            set
+            {
+                _OtherBrand= value;
+                NotifyPropertyChanged();
+            }
+        }
+        //public List<String> SelectedCategory { get; set; }
+
 
         public bool CheckboxSample { get; set; }
         public string Error => throw new NotImplementedException();
@@ -82,7 +125,7 @@ namespace VVDNApplicationWPF.Models
                 return "";
             }
         }
-         public Product()
+       /*  public Product()
         {
             SelectedCategory = new List<string>
             {
@@ -112,7 +155,7 @@ namespace VVDNApplicationWPF.Models
 
             };
 
-        }
+        }*/
     
         public event PropertyChangedEventHandler PropertyChanged;
 

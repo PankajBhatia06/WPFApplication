@@ -7,6 +7,21 @@
         xmlns:views="clr-namespace:VVDNApplicationWPF.Views"
         mc:Ignorable="d"
         Title="VVDN WPF Application" Height="450" Width="800">
+
+    <!--<Window.Resources>
+        <Style TargetType="MenuItem" x:Key="menukey" >
+           
+            <Style.Triggers >
+               
+                <DataTrigger  Binding="{Binding ElementName=xyz , Path=Ischecked}" Value="True">
+                    <Setter Property="Header"  Value="Newheader"/>
+                </DataTrigger>
+
+
+            </Style.Triggers>
+        </Style>
+        
+    </Window.Resources>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -14,16 +29,29 @@
 
         </Grid.RowDefinitions>
 
-        <Menu Grid.Row="0">
+        <Menu Grid.Row="0" >
             <MenuItem Header="File">
                 <MenuItem Header="Sample Page" Name="MenuSample" Click="MenuSample_Click"></MenuItem>
             </MenuItem>
 
-            <MenuItem Header="Masters"> 
-                <MenuItem Header="Categories" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="UOM" Name="MenuUOM" Click="MenuUOM_Click"></MenuItem>
-                <MenuItem Header="Brands" Name="MenuBrands" Click="MenuBrands_Click"></MenuItem>
-                <MenuItem Header="Product" x:Name="Products" Click="Products_Click"/>
+            <MenuItem Header="Masters"  x:Name="xyz">
+                <MenuItem Header="Categories">
+                    <MenuItem Header="List Categories" Click="MenuItem_Click_LstCate" x:Name="ListCategories" />
+                    <MenuItem Header="Add Category" Click="MenuItem_Click_AddCate" x:Name="AddCategory"/>
+                </MenuItem>
+                <MenuItem Header="UOM" Name="MenuUOM" Click="MenuUOM_Click">
+                    <MenuItem   Header="Listing UOMs" x:Name="ListingUoms"  Click="ListingUoms_Click"/>
+                    <MenuItem Header="Add UOMs" x:Name="AddUms"  Click="AddUms_Click"/>
+                </MenuItem>
+                <MenuItem Header="Brands" Name="MenuBrands" >
+                    <MenuItem Header="Listing Brands"  x:Name="BrandList" Click="BrandList_Click"/>
+                    <MenuItem Header="Add Brand" x:Name="Addbrands" Click="Addbrands_Click"/>
+                </MenuItem>
+                <MenuItem Header="Product" x:Name="Products" Click="Products_Click">
+                    <MenuItem  Header="List Products" x:Name="ListProducts" Click="ListProducts_Click" />
+                    <MenuItem  Header="Add Products" x:Name="AddProducts" Click="AddProducts_Click" />
+                </MenuItem>
+
             </MenuItem>
         </Menu>
 

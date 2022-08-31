@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BrandswithView">
 
-    <Grid>
+    <Grid Background="White" >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
@@ -20,11 +20,11 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Brand Id"/>
-        <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding SelectedBrandswithView.ID,Mode=TwoWay}"/>
+        <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding  SelectedBrandswith.ID,Mode=TwoWay}"/>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Category Name"/>
-        <TextBox x:Name="TxtName" Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding SelectedBrandswithView.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True,ValidatesOnExceptions=True,NotifyOnValidationError=True}"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Brand Name"/>
+        <TextBox x:Name="TxtName" Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding  SelectedBrandswith.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True,ValidatesOnExceptions=True,NotifyOnValidationError=True}"/>
 
-        <Button Grid.Row="2" Grid.Column="1" Margin="5" Click="Button_Click">Submit</Button>
+        <Button Grid.Row="2" Grid.Column="1" Margin="5" Click="Button_Click">Save</Button>
     </Grid>
 </Page>

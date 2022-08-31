@@ -35,9 +35,19 @@ namespace VVDNApplicationWPF.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"ID:{brandswithViewModel.SelectedBrandswithView.ID} and Name :{brandswithViewModel.SelectedBrandswithView.Name}", "wpf", MessageBoxButton.OK);
-            brandswithViewModel.SelectedBrandswithView.ID = int.MaxValue;
-            brandswithViewModel.SelectedBrandswithView.Name = " Name changed";
+            // MessageBox.Show($"ID:{brandswithViewModel.SelectedBrandswithView.ID} and Name :{brandswithViewModel.SelectedBrandswithView.Name}", "wpf", MessageBoxButton.OK);
+            //brandswithViewModel.SelectedBrandswithView.ID = int.MaxValue;
+            //brandswithViewModel.SelectedBrandswithView.Name = " Name changed";
+
+
+            if (brandswithViewModel.SaveBrand())
+            {
+                MessageBox.Show("Brands created !!");
+            }
+            else
+            {
+                MessageBox.Show("Some error occurred !!");
+            }
         }
             
     }

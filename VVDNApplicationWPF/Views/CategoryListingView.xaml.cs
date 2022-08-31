@@ -17,31 +17,20 @@ using VVDNApplicationWPF.ViewModels;
 namespace VVDNApplicationWPF.Views
 {
     /// <summary>
-    /// Interaction logic for ProductView.xaml
+    /// Interaction logic for CategoryListing.xaml
     /// </summary>
-    public partial class ProductView : Page
+    public partial class CategoryListingView : Page 
     {
-
-        public ProductViewModel productViewModel { get; set; }
-        public ProductView()
+        public CategoryListingViewModel CategoryListingViewModel { get; set; }
+        public CategoryListingView()
         {
             InitializeComponent();
-            productViewModel = new ProductViewModel();
-            this.DataContext = productViewModel;
-
+            CategoryListingViewModel = new CategoryListingViewModel();
+            this.DataContext = CategoryListingViewModel;
         }
-
-
-        private void Button_Click_Cancel(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
-
-        }
-
-        private void Button_Click_Save(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Successfully Submit");
+            //FramePages.Navigate(new Uri(@"\Views\CategoryView.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
-

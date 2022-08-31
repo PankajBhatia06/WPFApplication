@@ -4,19 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VVDNApplicationWPF.Models;
+using VVDNApplicationWPF.Services;
 
 namespace VVDNApplicationWPF.ViewModels
 {
    public class BrandswithViewModel
     {
-      
-        public Brandswith  SelectedBrandswithView { get; set; }
+        private readonly BrandService brandService;
+
+        public Brandswith  SelectedBrandswith { get; set; }
 
         public BrandswithViewModel()
         {
-           SelectedBrandswithView = new Brandswith(); 
-        }
-            
+           SelectedBrandswith = new Brandswith(); 
+            brandService = new BrandService();
 
-   }
+        }
+
+        public bool SaveBrand()
+        {
+            return brandService.InsertBrand(SelectedBrandswith);
+        }
+    }
 }

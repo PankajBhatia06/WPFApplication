@@ -8,20 +8,27 @@ using VVDNApplicationWPF.Services;
 
 namespace VVDNApplicationWPF.ViewModels
 {
-    public class CategoryViewModel
+    public class CategoryListingViewModel
     {
         private readonly CategoryService categoryService;
-        public Category SelectedCategory { get; set; }
-
-        public CategoryViewModel()
+        public List<Category> SelectedCategory { get; set; }
+        public CategoryListingViewModel()
         {
-            SelectedCategory = new Category();
             categoryService = new CategoryService();
-            
+            LoadCategories();
         }
-        public bool SaveCategory()
+
+        public void LoadCategories()
         {
-            return categoryService.InsertCategory(SelectedCategory);
+            try
+            {
+                SelectedCategory = categoryService.GetAllCategories();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
+
     }
 }

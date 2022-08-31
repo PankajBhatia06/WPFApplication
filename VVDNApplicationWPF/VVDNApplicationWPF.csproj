@@ -100,28 +100,48 @@
     </ApplicationDefinition>
     <Compile Include="Converters\VisibilityValueConverter.cs" />
     <Compile Include="DataBase\Connection.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Brandswith.cs" />
     <Compile Include="Models\DataGridModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\UOM.cs" />
     <Compile Include="Models\VisibilityValueConverter.cs" />
+    <Compile Include="Services\BrandService.cs" />
     <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\UomService.cs" />
+    <Compile Include="ViewModels\BrandListingViewModel.cs" />
     <Compile Include="ViewModels\BrandswithViewModel.cs" />
+    <Compile Include="ViewModels\CategoryListingViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\SampleViewModel.cs" />
+    <Compile Include="ViewModels\UOMListingViewModel.cs" />
     <Compile Include="ViewModels\UOMViewModel.cs" />
+    <Compile Include="Views\BrandListingView.xaml.cs">
+      <DependentUpon>BrandListingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BrandswithView.xaml.cs">
       <DependentUpon>BrandswithView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryListingView.xaml.cs">
+      <DependentUpon>CategoryListingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CategoryView.xaml.cs">
       <DependentUpon>CategoryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProductListingView.xaml.cs">
+      <DependentUpon>ProductListingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductListingViewModel.cs" />
     <Compile Include="Views\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SampleView.xaml.cs">
       <DependentUpon>SampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UomListingView.xaml.cs">
+      <DependentUpon>UomListingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UOMView.xaml.cs">
       <DependentUpon>UOMView.xaml</DependentUpon>
@@ -138,11 +158,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\BrandListingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\BrandswithView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CategoryListingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductListingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UomListingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

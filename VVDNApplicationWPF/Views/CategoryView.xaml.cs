@@ -28,15 +28,24 @@ namespace VVDNApplicationWPF.Views
             InitializeComponent();
             categoryViewModel = new CategoryViewModel();
             this.DataContext = categoryViewModel;
-            // var Connection = new CreateSqlConnectionstring()
-            Connection.CreateSqlConnection();
+           //var Connection = new CreateSqlConnectionstring()
+            //Connection.CreateSqlConnection();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"ID:{categoryViewModel.SelectedCategory.ID} and Name: {categoryViewModel.SelectedCategory.Name}", "MY WPF Application", MessageBoxButton.OK);
-            categoryViewModel.SelectedCategory.ID = int.MaxValue;
-            categoryViewModel.SelectedCategory.Name = "Again my name";
+            //MessageBox.Show($"ID:{categoryViewModel.SelectedCategory.ID} and Name: {categoryViewModel.SelectedCategory.Name}", "MY WPF Application", MessageBoxButton.OK);
+            //categoryViewModel.SelectedCategory.ID = int.MaxValue;
+            //categoryViewModel.SelectedCategory.Name = "Again my name";
+
+            if (categoryViewModel.SaveCategory())
+            {
+                MessageBox.Show("Category created !!");
+            }
+            else
+            {
+                MessageBox.Show("Some error occurred !!");
+            }
         }
     }
 }

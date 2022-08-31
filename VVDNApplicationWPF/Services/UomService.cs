@@ -9,52 +9,51 @@ using VVDNApplicationWPF.Models;
 
 namespace VVDNApplicationWPF.Services
 {
-    public class CategoryService
-    {
-
-        public bool InsertCategory(Category category)
+   public class UomService
+   {
+        public bool InsertUom(UOM uom)
         {
             try
             {
                 MySqlCommand mySqlCommand = new MySqlCommand();
                 mySqlCommand.Connection = Connection.CreateSqlConnection();
-                mySqlCommand.CommandText = "proc_insert_category";
+                mySqlCommand.CommandText = "proc_insert_uom";
                 mySqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
-                mySqlCommand.Parameters.AddWithValue("category_name", category.Name);
-                mySqlCommand.Parameters.AddWithValue("user_id", 1);
+                mySqlCommand.Parameters.AddWithValue("uom_name", uom.Name);
                 mySqlCommand.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
-            }
 
+            }
             return true;
         }
+        
 
-        public List<Category> GetAllCategories()
+        public List<UOM> GetAllUoms()
         {
-            var SelectedCategory = new List<Category>();
-
+            var SelectedUOM = new List<UOM>();
             MySqlCommand getCategoriesCommand = new MySqlCommand();
             getCategoriesCommand.Connection = Connection.CreateSqlConnection();
-            getCategoriesCommand.CommandText = "Select ID, Name from category";
+            getCategoriesCommand.CommandText = "Select ID, UomName from uom";
             getCategoriesCommand.CommandType = System.Data.CommandType.Text;
             var reader = getCategoriesCommand.ExecuteReader();
             if (reader.HasRows == true)
             {
                 while (reader.Read())
                 {
-                    SelectedCategory.Add(new Category
+                    SelectedUOM.Add(new UOM
                     {
                         ID = reader.GetInt32("ID"),
-                        Name = reader.GetString("Name")
+                        Name = reader.GetString("UomName")
                     });
                 }
                 reader.Close();
             }
 
-            return SelectedCategory;
+            return SelectedUOM;
         }
-    }
+
+   }
 }

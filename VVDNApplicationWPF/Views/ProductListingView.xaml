@@ -1,0 +1,36 @@
+﻿<Page x:Class="VVDNApplicationWPF.Views.ProductListingView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VVDNApplicationWPF.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductListingView">
+
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Width="120" Content="Add New Product" HorizontalAlignment="Left" Margin="5"
+               />
+
+        <StackPanel Grid.Row="1" Margin="5">
+            <DataGrid >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Product Id" Binding="{Binding ID}" Width="100"/>
+                    <DataGridTextColumn Header="product Name" Binding="{Binding Name}" Width="120"/>
+                    <DataGridTextColumn Header=" selectedCategory" Binding="{Binding SelectedCategory}" Width="150 "/>
+                    <DataGridTextColumn Header="SelectedBrand" Width="120"/>
+                    <DataGridTextColumn Header="SelectedUOM"  Width="130"/>
+                    <DataGridTextColumn Header="IsAvailable" />
+                    <DataGridTextColumn Header=" OpeningStock"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+    </Grid>
+</Page>

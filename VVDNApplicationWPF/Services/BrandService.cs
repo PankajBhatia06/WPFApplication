@@ -9,19 +9,18 @@ using VVDNApplicationWPF.Models;
 
 namespace VVDNApplicationWPF.Services
 {
-    public class CategoryService
+    public class BrandService
     {
-
-        public bool InsertCategory(Category category)
+        public bool InsertBrand(Brandswith brandswith)
         {
             try
             {
                 MySqlCommand mySqlCommand = new MySqlCommand();
                 mySqlCommand.Connection = Connection.CreateSqlConnection();
-                mySqlCommand.CommandText = "proc_insert_category";
+                mySqlCommand.CommandText = "proc_insert_brand";
                 mySqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
-                mySqlCommand.Parameters.AddWithValue("category_name", category.Name);
-                mySqlCommand.Parameters.AddWithValue("user_id", 1);
+                mySqlCommand.Parameters.AddWithValue("B_name", brandswith.Name);
+                mySqlCommand.Parameters.AddWithValue("ID", 1);
                 mySqlCommand.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -32,29 +31,29 @@ namespace VVDNApplicationWPF.Services
             return true;
         }
 
-        public List<Category> GetAllCategories()
+        public List<Brandswith> GetAllBrands()
         {
-            var SelectedCategory = new List<Category>();
+            var SelectedBrandswith = new List<Brandswith>();
 
             MySqlCommand getCategoriesCommand = new MySqlCommand();
             getCategoriesCommand.Connection = Connection.CreateSqlConnection();
-            getCategoriesCommand.CommandText = "Select ID, Name from category";
+            getCategoriesCommand.CommandText = "Select ID, B_name from brand";
             getCategoriesCommand.CommandType = System.Data.CommandType.Text;
             var reader = getCategoriesCommand.ExecuteReader();
             if (reader.HasRows == true)
             {
                 while (reader.Read())
                 {
-                    SelectedCategory.Add(new Category
+                    SelectedBrandswith.Add(new Brandswith
                     {
                         ID = reader.GetInt32("ID"),
-                        Name = reader.GetString("Name")
+                        Name = reader.GetString("B_name")
                     });
                 }
                 reader.Close();
             }
 
-            return SelectedCategory;
+            return SelectedBrandswith;
         }
     }
 }
