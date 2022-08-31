@@ -3,12 +3,56 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:VVDNApplicationWPF.Views"
+      xmlns:local="clr-namespace:VVDNApplicationWPF.Views" 
+      xmlns:models="clr-namespace:VVDNApplicationWPF.Models" xmlns:viewmodels="clr-namespace:VVDNApplicationWPF.ViewModels"
+      d:DataContext="{d:DesignInstance Type=viewmodels:ProductViewModel}"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProductView">
 
-    <Grid>
-        
+    <Grid Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" Grid.ColumnSpan="4">
+        <TextBlock Text="Product Id" Padding="2" x:Name="Id" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding SelectProduct.Id, Mode=TwoWay}" />
+
+        <TextBlock Text="Product Name" Padding="2" x:Name="Name" Grid.Row="1" Grid.Column="0"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding SelectProduct.Name, Mode=TwoWay}"/>
+
+        <TextBlock Text="Select Category" Padding="2" x:Name="SelectCategory" Grid.Row="2" Grid.Column="0"/>
+            <ComboBox Grid.Row="2" Grid.Column="2"  ItemsSource="{Binding Category}" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+
+        <TextBlock Text="Select Brand" Padding="2" x:Name="SelectBrand" Grid.Row="3" Grid.Column="0"/>
+            <ListBox Grid.Row="3" Grid.Column="2" Height="auto" ItemsSource="{Binding Brands}" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+
+        <TextBlock Text="Select UOM" Padding="2" x:Name="SelectUOM" Grid.Row="4" Grid.Column="0"/>
+            <ComboBox Grid.Row="4" Grid.Column="2" ItemsSource="{Binding Uoms}" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+
+        <TextBlock Text="IsAvailable" Padding="2" x:Name="IsAvailable" Grid.Row="5" Grid.Column="0"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="2">
+                <CheckBox Grid.Row="5" Grid.Column="2" Margin="3" Content="Tap Here1"/>
+                <CheckBox Grid.Row="5" Grid.Column="2" Margin="3" Content="Tap Here2"/>
+                <CheckBox Grid.Row="5" Grid.Column="2" Margin="3" Content="Tap Here3"/>
+            </StackPanel>
+        <TextBlock Text="Opening Stock" Padding="2" x:Name="OpeningStock" Grid.Row="6" Grid.Column="0"/>
+        <TextBox Grid.Row="6" Grid.Column="2"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="7" HorizontalAlignment="Center" Grid.ColumnSpan="4">
+            <Button x:Name="Save" Padding="2" Content="SAVE" Margin="0 10 10 0" Width="80"/>
+            <Button Click="Exit_Click" x:Name="Exit" Padding="2" Content="EXIT" Margin="0 10 10 0" Width="80"/>
+        </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

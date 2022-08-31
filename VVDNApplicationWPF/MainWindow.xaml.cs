@@ -47,5 +47,50 @@ namespace VVDNApplicationWPF
         {
             FramePages.Navigate(new Uri(@"\Views\SampleView.xaml", UriKind.Relative));
         }
+
+        private void MenuProduct_Click(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\ProductView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\CategoryView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\CategoryListView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\BrandView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\BrandListView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\UomView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\UomListView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\ProductView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_8(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\ProductListView.xaml", UriKind.Relative));
+        }
     }
 }

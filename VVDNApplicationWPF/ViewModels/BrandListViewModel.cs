@@ -8,21 +8,26 @@ using VVDNApplicationWPF.Services;
 
 namespace VVDNApplicationWPF.ViewModels
 {
-
-    public class BrandViewModel
+    public class BrandListViewModel
     {
         private readonly BrandService brandService;
-        public Brand SelectedCategory { get; set; }
-
-        public BrandViewModel()
+        public List<Brand> ListBrand { get; set; }
+        public BrandListViewModel()
         {
-            SelectedCategory = new Brand();
             brandService = new BrandService();
+            LoadBrand();
         }
 
-        public bool SaveCategory()
+        public void LoadBrand()
         {
-            return brandService.InsertBrand(SelectedCategory);
+            try
+            {
+                ListBrand = brandService.GetAllBrand();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
         }
     }
 }

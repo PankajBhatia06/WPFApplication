@@ -44,5 +44,15 @@ namespace VVDNApplicationWPF.Views
         {
             sampleViewModel.ListViewVisibility = !sampleViewModel.ListViewVisibility;
         }
+
+        private void DropComboDesign_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DropCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

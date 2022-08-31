@@ -17,30 +17,17 @@ using VVDNApplicationWPF.ViewModels;
 namespace VVDNApplicationWPF.Views
 {
     /// <summary>
-    /// Interaction logic for ProductView.xaml
+    /// Interaction logic for UomListView.xaml
     /// </summary>
-    
-
-    public partial class ProductView : Page
+    public partial class UomListView : Page
     {
-        // ProductView page;
-       
-
-        public ProductViewModel productviewmodel { get; set; } 
-        public ProductView()
+        //public UOMViewModel uomViewModel { get; set; }
+        public UomListViewModel uomListViewModel { get; set; }
+        public UomListView()
         {
             InitializeComponent();
-            //this.page = (ProductView)page;
-            productviewmodel=new ProductViewModel();
-            this.DataContext = productviewmodel;
+            uomListViewModel = new UomListViewModel();
+            this.DataContext = uomListViewModel;
         }
-
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            //page.Content = null;
-            Environment.Exit(0);
-        }
-
-        
     }
 }

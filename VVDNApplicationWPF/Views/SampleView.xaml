@@ -29,13 +29,13 @@
 
         <Label Margin="5" Grid.Row="0" Grid.Column="0" Content="Drop Down List with Binding"/>
         <ComboBox Margin="5" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="DropCombo" TabIndex="1" 
-                 Width="250" ItemsSource="{Binding ListOfString}" Text="Select Option" Foreground="Red" Background="White"
+                 Width="250" ItemsSource="{Binding ListOfString}" Text="Select Option" Foreground="Red" Background="White" SelectionChanged="DropCombo_SelectionChanged"
                  >
 
         </ComboBox>
 
         <Label Margin="5" Grid.Row="1" Grid.Column="0" Content="Drop Down List with design"/>
-        <ComboBox Margin="5" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" x:Name="DropComboDesign" Width="250"  >
+        <ComboBox Margin="5" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" x:Name="DropComboDesign" Width="250" SelectionChanged="DropComboDesign_SelectionChanged"  >
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Item One"/>

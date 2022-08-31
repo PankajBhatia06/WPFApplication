@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:VVDNApplicationWPF"
         xmlns:views="clr-namespace:VVDNApplicationWPF.Views"
         mc:Ignorable="d"
-        Title="VVDN WPF Application" Height="450" Width="800">
+        Title="VVDN WPF Application" Height="550" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -20,9 +20,24 @@
             </MenuItem>
 
             <MenuItem Header="Masters">
-                <MenuItem Header="Categories" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="UOM" Name="MenuUOM" Click="MenuUOM_Click"></MenuItem>
-                <MenuItem Header="Brands" Name="MenuBrands" Click="MenuBrands_Click"></MenuItem>
+               
+                <Separator />
+                <MenuItem Header="Categories" Name="MenuCategories">
+                    <MenuItem Header="Add_Category" Click="MenuItem_Click_1"/>
+                    <MenuItem Header="List_Catogry" Click="MenuItem_Click_2"/>
+                </MenuItem>
+                <MenuItem Header="UOM" Name="MenuUOM">
+                    <MenuItem Header="Add_UOM" Click="MenuItem_Click_5"/>
+                    <MenuItem Header="List_UOM" Click="MenuItem_Click_6"/>
+                </MenuItem>
+                <MenuItem Header="Brands" Name="MenuBrands">
+                    <MenuItem Header="Add_Brand" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="List_Brand" Click="MenuItem_Click_4"/>
+                </MenuItem>
+                <MenuItem Header="Product" Name="MenuProduct">
+                    <MenuItem Header="Add_Product" Click="MenuItem_Click_7"/>
+                    <MenuItem Header="List_Product" Click="MenuItem_Click_8"/>
+                </MenuItem>
             </MenuItem>
         </Menu>
 

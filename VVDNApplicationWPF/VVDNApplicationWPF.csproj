@@ -105,22 +105,42 @@
     <Compile Include="Models\DataGridModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\UOM.cs" />
+    <Compile Include="Services\BrandService.cs" />
+    <Compile Include="Services\CategoryServices.cs" />
+    <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\UomService.cs" />
+    <Compile Include="ViewModels\BrandListViewModel.cs" />
     <Compile Include="ViewModels\BrandViewModel.cs" />
+    <Compile Include="ViewModels\CategoryListViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\SampleViewModel.cs" />
+    <Compile Include="ViewModels\UomListViewModel.cs" />
     <Compile Include="ViewModels\UOMViewModel.cs" />
+    <Compile Include="Views\BrandListView.xaml.cs">
+      <DependentUpon>BrandListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BrandView.xaml.cs">
       <DependentUpon>BrandView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CategoryListView.xaml.cs">
+      <DependentUpon>CategoryListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CategoryView.xaml.cs">
       <DependentUpon>CategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductListView.xaml.cs">
+      <DependentUpon>ProductListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SampleView.xaml.cs">
       <DependentUpon>SampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UomListView.xaml.cs">
+      <DependentUpon>UomListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UOMView.xaml.cs">
       <DependentUpon>UOMView.xaml</DependentUpon>
@@ -137,11 +157,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\BrandListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\BrandView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CategoryListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,6 +182,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UomListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VVDNApplicationWPF.Database;
 using VVDNApplicationWPF.ViewModels;
 
 
@@ -32,9 +33,18 @@ namespace VVDNApplicationWPF.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"ID:{ViewModel.SelectedCategory.Id} and Name: {ViewModel.SelectedCategory.Name}", "MY WPF Application", MessageBoxButton.OK);
-            ViewModel.SelectedCategory.Id = int.MaxValue;
-            ViewModel.SelectedCategory.Name = "Again my name";
+            if (ViewModel.SaveCategory())
+            {
+                MessageBox.Show("UOM created");
+            }
+            else
+            {
+                MessageBox.Show("some error");
+            }
+
+            //MessageBox.Show($"ID:{ViewModel.SelectedCategory.Id} and Name: {ViewModel.SelectedCategory.Name}", "MY WPF Application", MessageBoxButton.OK);
+            //ViewModel.SelectedCategory.Id = int.MaxValue;
+            //ViewModel.SelectedCategory.Name = "Again my name";
         }
     }
 }
