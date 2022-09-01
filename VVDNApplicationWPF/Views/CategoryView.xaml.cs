@@ -32,14 +32,20 @@ namespace VVDNApplicationWPF.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (ObjCategoryViewModel.SaveCategory())
-            {
-                MessageBox.Show("Category created !!");
-            }
-            else
-            {
-                MessageBox.Show("Some error occurred !!");
-            }
+            //MessageBox.Show("Add Button Clicked !!");
+            //if (ObjCategoryViewModel.SaveCategory())
+            //{
+            //    MessageBox.Show("Category created !!");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Some error occurred !!");
+            //}
+        }
+
+        private void StackPanel_Click(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show("Stack Panel Clicked !!");
         }
     }
 }

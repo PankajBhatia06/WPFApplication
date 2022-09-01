@@ -26,6 +26,8 @@ namespace VVDNApplicationWPF.Views
         {
             InitializeComponent();
             productViewModel = new ProductViewModel();
+            productViewModel.SelectedProduct.LoadProductsCommand = new Action<string>(ShowInvalidValueMesage);
+            productViewModel.SelectedProduct.LoadProductsCommand += AgainShowInvalidValueMesage;
             this.DataContext = productViewModel;
         }
 
@@ -41,6 +43,22 @@ namespace VVDNApplicationWPF.Views
                 LblOtherBrand.Visibility = Visibility.Collapsed;
                 TxtOtherBrand.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void LoadDefaults_Click(object sender, RoutedEventArgs e)
+        {
+            //productViewModel?.LoadProductsCommand();
+        }
+
+        private void ShowInvalidValueMesage(string name)
+        {
+            MessageBox.Show($"{name} is not allowed !!!");
+        }
+
+        private void AgainShowInvalidValueMesage(string name)
+        {
+            MessageBox.Show($"I said {name} is not allowed !!!");
+
         }
     }
 }
