@@ -7,16 +7,10 @@ using System.Threading.Tasks;
 
 namespace VVDNApplicationWPF.Models
 {
-    public class UnitOfMeasurement : IDataErrorInfo, INotifyPropertyChanged
+    public class UnitOfMeasurement : BaseModel, IDataErrorInfo
     {
 
-        public UnitOfMeasurement()
-        {
-            Id = 34678;
-            Name = "TEXT";
-
-        }
-
+       
 
 
         private int _Id;
@@ -39,12 +33,6 @@ namespace VVDNApplicationWPF.Models
 
 
         private string _Name;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(String propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         public string Name
         {

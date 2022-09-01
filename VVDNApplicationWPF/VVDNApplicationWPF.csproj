@@ -101,15 +101,28 @@
     <Compile Include="Converters\BooleanToYesNoConverter.cs" />
     <Compile Include="Converters\VisibilityValueConverter.cs" />
     <Compile Include="Database\Connection.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\DataGridModel.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\UnitOfMeasurement.cs" />
+    <Compile Include="Services\BrandServices.cs" />
+    <Compile Include="Services\CategoryServices.cs" />
+    <Compile Include="Services\ProductServices.cs" />
+    <Compile Include="ViewModels\BrandViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\ProductListView.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\SampleViewModel.cs" />
     <Compile Include="ViewModels\UOMViewModel.cs" />
+    <Compile Include="Views\Brand.xaml.cs">
+      <DependentUpon>Brand.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CategoryView.xaml.cs">
       <DependentUpon>CategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListofProducts.xaml.cs">
+      <DependentUpon>ListofProducts.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Product.xaml.cs">
       <DependentUpon>Product.xaml</DependentUpon>
@@ -132,7 +145,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Brand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListofProducts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

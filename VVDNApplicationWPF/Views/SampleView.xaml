@@ -103,7 +103,7 @@
 
             <Button x:Name="btnVisibility" Click="btnVisibility_Click" Content="Change Visibility" Height="30" VerticalAlignment="Bottom" />
 
-            <TextBox Text="{Binding ListViewVisibility,Converter={StaticResource BooleanToYesNoConverter}}" Margin=" 5" Width="100" FontWeight="Bold" FontSize="24"></TextBox>
+            <TextBox Text="{Binding ListViewVisibility,Converter={StaticResource BooleanToYesNoConverter}}" Margin=" 5" Width="100" FontWeight="Bold" FontSize="24" TextChanged="TextBox_TextChanged"></TextBox>
         </StackPanel>
 
         <TextBlock Margin="5" Grid.Row="7" Grid.Column="0" Text="Slider"/>

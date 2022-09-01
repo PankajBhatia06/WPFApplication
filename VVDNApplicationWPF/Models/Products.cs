@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace VVDNApplicationWPF.Models
 {
-    public class Products : INotifyPropertyChanged, IDataErrorInfo
+    public class Products : INotifyPropertyChanged
     {
+
+
+
+
 
 
         private int _Id;
@@ -46,93 +50,72 @@ namespace VVDNApplicationWPF.Models
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public string Error => throw new NotImplementedException();
+       
+        
 
-        public string this[string columnName]
+
+        
+
+
+
+        private int _selectedCategory;
+        public int SelectedCategory
         {
+
             get
             {
-                switch (columnName)
-                {
-                    case "Name":
-                        if (string.IsNullOrWhiteSpace(Name))
-                        {
-                            return "Enter a value";
-                        }
-                        else if (!string.IsNullOrWhiteSpace(Name) && Name.Equals("Test"))
-                        {
-                            return "This name is not allowed";
-                        }
-                        break;
-                    case "Id":
-                        if (Id <= 0)
-                            return "Id greater than 0";
-                        break;
-                    default:
-                        break;
-                }
-                return "";
+               return _selectedCategory;
+
             }
 
-
+            set
+            {
+                _selectedCategory = value;
+                NotifyPropertyChanged();
+            }
         }
 
-        public List<string> SelectedProduct { get; set; }
-        public List<string> SelectedBrands { get; set; }
-        public List<string> SelectedUOMs { get; set; }
 
+        private int _selectedBrand;
+        public int SelectedBrand
+        {
 
-
-        public Products()
-         {
-             SelectedProduct = new List<string>
+            get
             {
-                "Surbhi",
-                "Shagun",
-                "Deepanshu",
-                "Vansh",
-                "Amit",
-                "Neeraj",
-                "Sushant",
-                "Hadiya",
-                "Sachin",
-                "Sumit",
-                "Ankur"};
+                return _selectedBrand;
 
-            SelectedBrands = new List<string>
+            }
+
+            set
             {
-                "Microsoft",
-                "DELL",
-                "NIKE",
-                "ZARA",
-                "GUCCI",
-                "Pepe",
-
-             };
-
-
-            SelectedUOMs = new List<string>
-            {
-                "Pair",
-                "Piece",
-                "KG",
-                "Litre",
-                "Set",
-
-
-            };
-
-
-
+                _selectedBrand = value;
+                NotifyPropertyChanged();
+            }
         }
 
 
 
-       
-       
-     
-       
-    
+        private int  _selectedUOM;
+        public int SelectedUOM
+        {
+
+            get
+            {
+                return _selectedUOM;
+
+            }
+
+            set
+            {
+                _selectedUOM = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
+
+
+
     }  
 }
 

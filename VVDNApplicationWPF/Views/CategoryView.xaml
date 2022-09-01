@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Category Id"/>
-        <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding SelectedCategory.Id,Mode=TwoWay}"
+        <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1" Margin="5" 
                  ToolTip="Please enter a number value less than 1000000">
         </TextBox>
 

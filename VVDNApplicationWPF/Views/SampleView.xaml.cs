@@ -44,5 +44,10 @@ namespace VVDNApplicationWPF.Views
         {
             sampleViewModel.ListViewVisibility = !sampleViewModel.ListViewVisibility;
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

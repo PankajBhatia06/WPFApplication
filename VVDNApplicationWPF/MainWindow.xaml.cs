@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VVDNApplicationWPF.Views;
+using System.Windows.Media;
+
 
 namespace VVDNApplicationWPF
 {
@@ -31,6 +33,15 @@ namespace VVDNApplicationWPF
             //CategoryView categoryView = new CategoryView();
             //FramePages.Content = categoryView;
             FramePages.Navigate(new Uri(@"\Views\CategoryView.xaml", UriKind.RelativeOrAbsolute));
+            Style style = new Style
+            {
+                TargetType = typeof(Menu)
+            };
+
+            style.Setters.Add(new Setter(Menu.BackgroundProperty, Brushes.Green));
+
+            this.Resources["menuitem"] = style;
+
         }
 
         private void MenuUOM_Click(object sender, RoutedEventArgs e)
@@ -51,6 +62,11 @@ namespace VVDNApplicationWPF
         private void ProductMenu_Click(object sender, RoutedEventArgs e)
         {
             FramePages.Navigate(new Uri(@"\Views\Product.xaml", UriKind.Relative));
+        }
+
+        private void ProductListMenu_Click(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\ListofProducts.xaml", UriKind.Relative));
         }
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VVDNApplicationWPF.ViewModels;
+using VVDNApplicationWPF.Database;
 
 namespace VVDNApplicationWPF.Views
 {
@@ -28,6 +29,22 @@ namespace VVDNApplicationWPF.Views
             InitializeComponent();
             ProductSelection = new ProductViewModel();
             this.DataContext = ProductSelection;
+            var connection = Connection.CreateSqlConnection();
+        }
+
+       
+
+        private void Save_button(object sender, RoutedEventArgs e)
+        {
+
+            if (ProductSelection.SaveProducts())
+            {
+                MessageBox.Show("Category created !!");
+            }
+            else
+            {
+                MessageBox.Show("Some error occurred !!");
+            }
         }
     }
 }

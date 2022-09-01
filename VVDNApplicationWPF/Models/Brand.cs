@@ -7,16 +7,8 @@ using System.Threading.Tasks;
 
 namespace VVDNApplicationWPF.Models
 {
-    public class Category : INotifyPropertyChanged, IDataErrorInfo
+    public class Brand :BaseModel, IDataErrorInfo
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyPropertyChanged(String propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-     
 
         private int _Id;
         public int Id
@@ -65,10 +57,6 @@ namespace VVDNApplicationWPF.Models
                         {
                             return "This name is not allowed";
                         }
-                        break;
-                    case "Id":
-                        if (Id <= 0)
-                            return "Id greater than 0";
                         break;
                     default:
                         break;
