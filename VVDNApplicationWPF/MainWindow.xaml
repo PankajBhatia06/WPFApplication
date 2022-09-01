@@ -7,6 +7,27 @@
         xmlns:views="clr-namespace:VVDNApplicationWPF.Views"
         mc:Ignorable="d"
         Title="VVDN WPF Application" Height="550" Width="800">
+    <!-- Resources-->
+    <Window.Resources>
+        <!--<Style x:Key="color" TargetType="Menu">
+            --><!--Property Trigger--><!--
+            <Style.Triggers>
+               --><!-- <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Aquamarine" />
+                </Trigger>--><!--
+                <DataTrigger Binding="{Binding ElementName=DataTriggerTest , Path=IsChecked}" Value="True">
+                    <Setter Property="Header"  Value="File1"></Setter>  
+                </DataTrigger>
+            </Style.Triggers>
+            --><!--Property Trigger-->
+           
+           <!-- <Setter Property="Background" Value="AliceBlue"/>--><!--
+        </Style>-->
+        
+        
+    </Window.Resources>
+    <!--Resources-->
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -14,8 +35,8 @@
 
         </Grid.RowDefinitions>
 
-        <Menu Grid.Row="0">
-            <MenuItem Header="File">
+        <Menu x:Name="Menu" Style="{DynamicResource color}" Grid.Row="0">
+            <MenuItem Header="File" x:Name="DataTriggerTest">
                 <MenuItem Header="Sample Page" Name="MenuSample" Click="MenuSample_Click"></MenuItem>
             </MenuItem>
 

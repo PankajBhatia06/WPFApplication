@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VVDNApplicationWPF.Models;
 using VVDNApplicationWPF.ViewModels;
 
 namespace VVDNApplicationWPF.Views
@@ -41,6 +42,16 @@ namespace VVDNApplicationWPF.Views
             Environment.Exit(0);
         }
 
-        
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            if (productviewmodel.SaveProduct())
+            {
+                MessageBox.Show("Product Inserted");
+            }
+            else
+            {
+                MessageBox.Show("some error occured");
+            }
+        }
     }
 }

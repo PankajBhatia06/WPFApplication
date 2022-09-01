@@ -11,15 +11,23 @@ namespace VVDNApplicationWPF.ViewModels
     public class ProductViewModel
     {
         public ProductModel SelectedProduct { get; set; }
-        //private readonly ProductService productService;
+        private readonly ProductService productService;
         private readonly BrandService brandService;
         private readonly CategoryServices categoryServices;
         private readonly UomService uomService;
 
+       
+        public List<Category> Category { get; set; }
+
+        public List<Brand> Brands { get; set; }
+
+        public List<UOM> Uoms { get; set; }
+
         public ProductViewModel()
         {
             SelectedProduct = new ProductModel();
-            //productService = new ProductService();
+
+            productService = new ProductService();
 
             categoryServices = new CategoryServices();
             Category = categoryServices.GetAllCategories();
@@ -30,10 +38,10 @@ namespace VVDNApplicationWPF.ViewModels
             uomService = new UomService();
             Uoms = uomService.GetAllUom();
         }
-        public List<Category> Category { get; set; }
 
-        public List<Brand> Brands { get; set; }
-
-        public List<UOM> Uoms { get; set; }
+        public bool SaveProduct()
+        {
+            return productService.InsertProduct(SelectedProduct);
+        }
     }
 }

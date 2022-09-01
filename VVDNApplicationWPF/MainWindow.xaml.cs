@@ -45,6 +45,17 @@ namespace VVDNApplicationWPF
 
         private void MenuSample_Click(object sender, RoutedEventArgs e)
         {
+            //Menu.Background = Brushes.Aquamarine;
+
+
+            Style style = new Style
+            {
+                TargetType = typeof(Menu)
+            };
+            style.Setters.Add(new Setter(Menu.BackgroundProperty, Brushes.Green));
+            this.Resources["color"] = style;
+
+
             FramePages.Navigate(new Uri(@"\Views\SampleView.xaml", UriKind.Relative));
         }
 

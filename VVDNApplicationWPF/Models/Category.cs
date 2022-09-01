@@ -64,10 +64,6 @@ namespace VVDNApplicationWPF.Models
                         {
                             return "Enter a value";
                         }
-                        else if (!string.IsNullOrWhiteSpace(Name) && Name.Equals("Test"))
-                        {
-                            return "This name is not allowed";
-                        }
                         break;
                     case "Id":
                         if (Id.Equals(0))
