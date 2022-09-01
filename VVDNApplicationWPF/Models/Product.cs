@@ -7,8 +7,26 @@ using System.Threading.Tasks;
 
 namespace VVDNApplicationWPF.Models
 {
-    public class Product : BaseModel, IDataErrorInfo
+    //public delegate void LoadProductsDeletegate();
+
+    public partial class Product : BaseModel, IDataErrorInfo
     {
+        public Action<string> LoadProductsCommand { get; set; }
+
+        public Func<string, bool> FuncDeletegateCommand { get; set; }
+
+        public Predicate<string> Predicate { get; set; }
+        protected override void NotifyPropertyChanged(string propertyName = "")
+        {
+            base.NotifyPropertyChanged(propertyName);
+            if (propertyName == "Name")
+            {
+                if (Name == "Shagun")
+                {
+                    LoadProductsCommand?.Invoke(Name);
+                }
+            }
+        }
 
         private int _Id;
         public int Id
@@ -34,7 +52,7 @@ namespace VVDNApplicationWPF.Models
             set
             {
                 _Name = value;
-                NotifyPropertyChanged();
+                NotifyPropertyChanged("Name");
             }
         }
 

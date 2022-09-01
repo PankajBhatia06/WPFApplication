@@ -29,7 +29,6 @@ namespace VVDNApplicationWPF.ViewModels
                     Name="Cosmetics"
                 }
             };
-
             Brands = new List<Brand>
             {
                 new Brand
@@ -48,7 +47,6 @@ namespace VVDNApplicationWPF.ViewModels
                     Name="Nikea"
                 }
             };
-
             Uoms = new List<UOM>
             {
                 new UOM
@@ -71,8 +69,7 @@ namespace VVDNApplicationWPF.ViewModels
                     Name="Other"
                 }
             };
-
-            LoadProduct();
+            SelectedProduct = new Product();
         }
 
 
@@ -84,16 +81,9 @@ namespace VVDNApplicationWPF.ViewModels
 
         public Product SelectedProduct { get; set; }
 
-        public void LoadProduct()
+        private void LoadProduct()
         {
-            SelectedProduct = new Product
-            {
-                Id = 1,
-                Name = "IPhone",
-                SelectedBrand = 2,
-                SelectedCategory = 3,
-                SelectedUom = 1
-            };
+            SelectedProduct.Name = "IPhone";
         }
 
     }

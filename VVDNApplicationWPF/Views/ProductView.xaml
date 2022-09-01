@@ -64,5 +64,9 @@
                 </Style>
             </TextBox.Style>-->
         </TextBox>
+
+        <!--<StackPanel Grid.Row="5" Grid.Column="1">
+            <Button x:Name="LoadDefaults" Content="Load Default Values" Click="LoadDefaults_Click"/>
+        </StackPanel>-->
     </Grid>
 </Page>

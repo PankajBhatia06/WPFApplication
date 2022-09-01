@@ -51,7 +51,8 @@
             </TextBox.Style>
 
         </TextBox>
-
-        <Button Grid.Row="2" Grid.Column="1" Margin="5" Click="Button_Click">Save</Button>
+        <StackPanel Grid.Row="2" Grid.Column="1" ButtonBase.Click="StackPanel_Click">
+            <Button Margin="5" Command="{Binding SaveCategoryCommand}" CommandParameter="123445sdkjsfdk">Save</Button>
+        </StackPanel>
     </Grid>
 </Page>

@@ -11,8 +11,9 @@ namespace VVDNApplicationWPF.Models
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void NotifyPropertyChanged(String propertyName = "")
+        protected virtual void NotifyPropertyChanged(String propertyName = "")
         {
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
