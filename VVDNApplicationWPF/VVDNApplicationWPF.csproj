@@ -101,21 +101,35 @@
     <Compile Include="Converters\BooleanToYesNoConverter.cs" />
     <Compile Include="Converters\VisibilityValueConverter.cs" />
     <Compile Include="Database\Connection.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerListModel.cs" />
     <Compile Include="Models\DataGridModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Models\UOM.cs" />
     <Compile Include="Services\BrandService.cs" />
     <Compile Include="Services\CategoryServices.cs" />
+    <Compile Include="Services\CountryService.cs" />
+    <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\StateService.cs" />
     <Compile Include="Services\UomService.cs" />
     <Compile Include="ViewModels\BrandListViewModel.cs" />
     <Compile Include="ViewModels\BrandViewModel.cs" />
     <Compile Include="ViewModels\CategoryListViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\CountryListViewModel.cs" />
+    <Compile Include="ViewModels\CountryViewModel.cs" />
+    <Compile Include="ViewModels\CustomerListViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\SampleViewModel.cs" />
+    <Compile Include="ViewModels\StateViewListModel.cs" />
+    <Compile Include="ViewModels\StateViewModel.cs" />
     <Compile Include="ViewModels\UomListViewModel.cs" />
     <Compile Include="ViewModels\UOMViewModel.cs" />
     <Compile Include="Views\BrandListView.xaml.cs">
@@ -130,6 +144,18 @@
     <Compile Include="Views\CategoryView.xaml.cs">
       <DependentUpon>CategoryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CountryListView.xaml.cs">
+      <DependentUpon>CountryListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CountryView.xaml.cs">
+      <DependentUpon>CountryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerListView.xaml.cs">
+      <DependentUpon>CustomerListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProductListView.xaml.cs">
       <DependentUpon>ProductListView.xaml</DependentUpon>
     </Compile>
@@ -138,6 +164,12 @@
     </Compile>
     <Compile Include="Views\SampleView.xaml.cs">
       <DependentUpon>SampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StateListView.xaml.cs">
+      <DependentUpon>StateListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StateView.xaml.cs">
+      <DependentUpon>StateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UomListView.xaml.cs">
       <DependentUpon>UomListView.xaml</DependentUpon>
@@ -173,6 +205,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CountryListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CountryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomerListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ProductListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,6 +230,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StateListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

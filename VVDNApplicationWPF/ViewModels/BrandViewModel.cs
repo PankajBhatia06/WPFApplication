@@ -16,6 +16,8 @@ namespace VVDNApplicationWPF.ViewModels
 
         public BrandViewModel()
         {
+
+
             SelectedCategory = new Brand();
             brandService = new BrandService();
         }

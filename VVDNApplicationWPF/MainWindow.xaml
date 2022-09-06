@@ -16,7 +16,7 @@
                     <Setter Property="Background" Value="Aquamarine" />
                 </Trigger>--><!--
                 <DataTrigger Binding="{Binding ElementName=DataTriggerTest , Path=IsChecked}" Value="True">
-                    <Setter Property="Header"  Value="File1"></Setter>  
+                    <Setter Property="Header"  Value="TargetFile1"></Setter>  
                 </DataTrigger>
             </Style.Triggers>
             --><!--Property Trigger-->
@@ -58,6 +58,20 @@
                 <MenuItem Header="Product" Name="MenuProduct">
                     <MenuItem Header="Add_Product" Click="MenuItem_Click_7"/>
                     <MenuItem Header="List_Product" Click="MenuItem_Click_8"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Account" Name="AccountMenu">
+                <MenuItem Header="State" Name="MenuState">
+                    <MenuItem Header="Add State" Click="MenuItem_Click_11"/>
+                    <MenuItem Header="List State" Click="MenuItem_Click_12"/>
+                </MenuItem>
+                <MenuItem Header="Country" Name="MenuCountry">
+                    <MenuItem Header="Add Country" Click="MenuItem_Click_13"/>
+                    <MenuItem Header="List Country" Click="MenuItem_Click_14"/>
+                </MenuItem>
+                <MenuItem Header="Customer" Name="MenuCustomer">
+                    <MenuItem Header="Add Customer" Click="MenuItem_Click_9"/>
+                    <MenuItem Header="List Customer" Click="MenuItem_Click_10"/>
                 </MenuItem>
             </MenuItem>
         </Menu>

@@ -103,5 +103,35 @@ namespace VVDNApplicationWPF
         {
             FramePages.Navigate(new Uri(@"\Views\ProductListView.xaml", UriKind.Relative));
         }
+
+        private void MenuItem_Click_9(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\CustomerView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_10(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\CustomerListView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_11(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\StateView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_12(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\StateListView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_13(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\CountryView.xaml", UriKind.Relative));
+        }
+
+        private void MenuItem_Click_14(object sender, RoutedEventArgs e)
+        {
+            FramePages.Navigate(new Uri(@"\Views\CountryListView.xaml", UriKind.Relative));
+        }
     }
 }
